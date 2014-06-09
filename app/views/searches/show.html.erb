@@ -1,4 +1,37 @@
 <h1> MUDAFUCKIN SEARCH RESULTS </h1>
 
 <h2> Summoner Name: <%=@search.summoner_name%> </h2>
-<h2> Max Deaths: <%=@search.max_deaths%> </h2>
+
+<img src = "http://ddragon.leagueoflegends.com/cdn/4.9.1/img/champion/Aatrox.png"/>
+
+<% if @aatrox.empty? %>
+<div>No Stats for this Champion!</div>
+<% else %>
+<ul>
+<%@aatrox.each do |elem| %> 
+<li><%=elem["statType"]%>: <%=elem["value"]%></li>
+<% end %>
+</ul> 
+<% end %>
+
+<img src = "http://ddragon.leagueoflegends.com/cdn/4.9.1/img/champion/Ahri.png"/>
+<% if @ahri.empty? %>
+<div>No Stats for this Champion!</div>
+<% else %>
+<ul>
+<%@ahri.each do |elem| %> 
+<li><%=elem["statType"]%>: <%=elem["value"]%></li>
+<% end %>
+</ul> 
+<% end %>
+
+<img src ="http://ddragon.leagueoflegends.com/cdn/4.9.1/img/champion/Alistar.png"/>
+<% if @alistar.empty? %>
+<div>No Stats for this Champion!</div>
+<% else %>
+<ul>
+<%@alistar.each do |elem| %> 
+<li><%=elem["statType"]%>: <%=elem["value"]%></li>
+<% end %>
+</ul> 
+<% end %>
