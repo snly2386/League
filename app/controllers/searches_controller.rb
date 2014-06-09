@@ -231,7 +231,7 @@ class SearchesController < ApplicationController
               end
     leblanc = []
     @leblanc = @stats.body["data"]["lifetimeStatistics"]["array"].each do |stat| 
-               kennen.push(stat) if stat["championId"] == 7 
+               leblanc.push(stat) if stat["championId"] == 7 
                end
     leesin = []
     @leesin = @stats.body["data"]["lifetimeStatistics"]["array"].each do |stat| 
@@ -458,24 +458,72 @@ class SearchesController < ApplicationController
              end
     veigar = []
     @veigar = @stats.body["data"]["lifetimeStatistics"]["array"].each do |stat| 
-              veigar.push(stat) if stat["championId"] == 85 
+              veigar.push(stat) if stat["championId"] == 45 
               end
-    velkoz = []
+    # velkoz = []
+    # @velkoz = @stats.body["data"]["lifetimeStatistics"]["array"].each do |stat| 
+    #           velkoz.push(stat) if stat["championId"] == 85 
+    #           end
     vi = []
+    @vi = @stats.body["data"]["lifetimeStatistics"]["array"].each do |stat| 
+          vi.push(stat) if stat["championId"] == 254 
+          end
     viktor = []
+    @viktor = @stats.body["data"]["lifetimeStatistics"]["array"].each do |stat| 
+              viktor.push(stat) if stat["championId"] == 112 
+              end
     vladimir = []
+    @vladimir = @stats.body["data"]["lifetimeStatistics"]["array"].each do |stat| 
+                vladimir.push(stat) if stat["championId"] == 8 
+                end
     volibear = []
+    @volibear = @stats.body["data"]["lifetimeStatistics"]["array"].each do |stat| 
+                volibear.push(stat) if stat["championId"] == 106 
+                end
     warwick = []
+    @warwick = @stats.body["data"]["lifetimeStatistics"]["array"].each do |stat| 
+               warwick.push(stat) if stat["championId"] == 19 
+               end
     wukong = []
+    @wukong = @stats.body["data"]["lifetimeStatistics"]["array"].each do |stat| 
+              wukong.push(stat) if stat["championId"] == 62 
+              end
     xerath = []
-    xin zhao = []
+    @xerath = @stats.body["data"]["lifetimeStatistics"]["array"].each do |stat| 
+              xerath.push(stat) if stat["championId"] == 101 
+              end
+    xin_zhao = []
+    @xinzhao = @stats.body["data"]["lifetimeStatistics"]["array"].each do |stat| 
+               xinzhao.push(stat) if stat["championId"] == 5 
+               end
     yasuo = []
+    @yasuo = @stats.body["data"]["lifetimeStatistics"]["array"].each do |stat| 
+             yasuo.push(stat) if stat["championId"] == 157 
+             end
     yorick = []
+    @yorick = @stats.body["data"]["lifetimeStatistics"]["array"].each do |stat| 
+              yorick.push(stat) if stat["championId"] == 83 
+              end
     zak = []
+    @zak = @stats.body["data"]["lifetimeStatistics"]["array"].each do |stat| 
+           zac.push(stat) if stat["championId"] == 154 
+           end
     zed = []
+    @zed = @stats.body["data"]["lifetimeStatistics"]["array"].each do |stat| 
+           zed.push(stat) if stat["championId"] == 238 
+           end
     ziggs = []
+    @ziggs = @stats.body["data"]["lifetimeStatistics"]["array"].each do |stat| 
+             ziggs.push(stat) if stat["championId"] == 115 
+             end
     zilean = []
+    @zilean = @stats.body["data"]["lifetimeStatistics"]["array"].each do |stat| 
+              zilean.push(stat) if stat["championId"] == 26 
+              end
     zyra = []
+    @zyra = @stats.body["data"]["lifetimeStatistics"]["array"].each do |stat| 
+            zyra.push(stat) if stat["championId"] == 143 
+            end
 
 
     redirect_to "/searches/#{@search.id}"
