@@ -20,11 +20,20 @@ class SearchesController < ApplicationController
 
   end
 
+  def ranked_league(summoner_name)
+  @response = Unirest::get "https://teemojson.p.mashape.com/player/na/#{summoner_name}/leagues", 
+  headers: { 
+    "X-Mashape-Authorization" => "XMxE0oKP0YqjU4fVpZIC4t2kaDUrhoAx"
+  }
+  end
+
   def show
     @search = Search.find(params[:id])
     @summoner_name = @search.summoner_name
     @stats = rank_stats(@summoner_name)
-    
+    @league = ranked_league(@summoner_name)
+    @rank = @league.body["data"]["summonerLeagues"]["array"][0]["tier"]
+    @tier = @league.body["data"]["summonerLeagues"]["array"][0]["requestorsRank"]
     @aatrox = []
     aatrox = @stats.body["data"]["lifetimeStatistics"]["array"].each do |stat| 
               @aatrox.push(stat) if stat["championId"] == 266 

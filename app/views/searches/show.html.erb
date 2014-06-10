@@ -2,6 +2,28 @@
 
 <h2> Summoner Name: <%=@search.summoner_name%> </h2>
 
+<% if @rank == "BRONZE" %>
+<img src = "http://img3.wikia.nocookie.net/__cb20130928162132/leagueoflegends/images/thumb/b/b4/BronzeBadgeSeason2.png/120px-BronzeBadgeSeason2.png"/>
+<div><%= @rank%> <%=@tier%></div>
+<% elsif @rank == "SILVER" %>
+<img src="http://img1.wikia.nocookie.net/__cb20130928162033/leagueoflegends/images/thumb/9/99/SilverBageSeason2.png/120px-SilverBageSeason2.png" />
+<div><%=@rank%> <%=@tier%></div>
+<% elsif @rank == "GOLD" %>
+<img src="http://img2.wikia.nocookie.net/__cb20130928162204/leagueoflegends/images/thumb/7/77/GoldBadgeSeason2.png/120px-GoldBadgeSeason2.png" />
+<div><%=@rank%> <%=@tier%></div>
+<% elsif @rank == "PlATINUM" %>
+<img src="http://img2.wikia.nocookie.net/__cb20130928162240/leagueoflegends/images/thumb/5/5f/PlatinumBadgeSeason2.png/120px-PlatinumBadgeSeason2.png" />
+<div><%=@rank%> <%=@tier%></div>
+<% elsif @rank == "DIAMOND" %>
+<img src="http://img3.wikia.nocookie.net/__cb20130928162320/leagueoflegends/images/thumb/0/03/DiamondBadge.png/120px-DiamondBadge.png"/>
+<div><%=@rank%> <%=@tier%></div>
+<% elsif @rank == "CHALLENGER"%>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC5lqg7zKNwsfyeMk6_RfBLZYaeiqRXEoWpIOOrbYG7jKZF4J4HirhBnNc" />
+<div><%=@rank%> <%=@tier%></div>
+<% end %>
+
+
+
 <img src = "http://ddragon.leagueoflegends.com/cdn/4.9.1/img/champion/Aatrox.png"/>
 
 <% if @aatrox.empty? %>
@@ -246,7 +268,7 @@
 </ul> 
 <% end %>
 
-<img src ="http://ddragon.leagueoflegends.com/cdn/4.9.1/img/champion/Fiddlesticks.png"/>
+<img src ="http://ddragon.leagueoflegends.com/cdn/4.9.1/img/champion/FiddleSticks.png"/>
 <% if @fiddlesticks.empty? %>
 <div>No Stats for this Champion!</div>
 <% else %>
@@ -378,7 +400,7 @@
 </ul> 
 <% end %>
 
-<img src ="http://ddragon.leagueoflegends.com/cdn/4.9.1/img/champion/Jarvan.png"/>
+<img src ="http://ddragon.leagueoflegends.com/cdn/4.9.1/img/champion/JarvanIV.png"/>
 <% if @jarvan.empty? %>
 <div>No Stats for this Champion!</div>
 <% else %>
@@ -1061,11 +1083,11 @@
 <% end %>
 
 <img src ="http://ddragon.leagueoflegends.com/cdn/4.9.1/img/champion/TwistedFate.png"/>
-<% if @twistedfate.empty? %>
+<% if @twisted_fate.empty? %>
 <div>No Stats for this Champion!</div>
 <% else %>
 <ul>
-<%@twistedfate.each do |elem| %> 
+<%@twisted_fate.each do |elem| %> 
 <li><%=elem["statType"]%>: <%=elem["value"]%></li>
 <% end %>
 </ul> 
@@ -1192,7 +1214,7 @@
 </ul> 
 <% end %>
 
-<img src ="http://ddragon.leagueoflegends.com/cdn/4.9.1/img/champion/Wukong.png"/>
+<img src ="http://ddragon.leagueoflegends.com/cdn/4.9.1/img/champion/MonkeyKing.png"/>
 <% if @wukong.empty? %>
 <div>No Stats for this Champion!</div>
 <% else %>
