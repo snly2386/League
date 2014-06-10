@@ -515,7 +515,7 @@ class SearchesController < ApplicationController
               end
     @xin_zhao = []
     xinzhao = @stats.body["data"]["lifetimeStatistics"]["array"].each do |stat| 
-               @xinzhao.push(stat) if stat["championId"] == 5 
+               @xin_zhao.push(stat) if stat["championId"] == 5 
                end
     @yasuo = []
     yasuo = @stats.body["data"]["lifetimeStatistics"]["array"].each do |stat| 
@@ -527,7 +527,7 @@ class SearchesController < ApplicationController
               end
     @zak = []
     zak = @stats.body["data"]["lifetimeStatistics"]["array"].each do |stat| 
-           @zac.push(stat) if stat["championId"] == 154 
+           @zak.push(stat) if stat["championId"] == 154 
            end
     @zed = []
     zed = @stats.body["data"]["lifetimeStatistics"]["array"].each do |stat| 
