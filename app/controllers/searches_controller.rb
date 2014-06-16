@@ -25,6 +25,10 @@ class SearchesController < ApplicationController
     @search.champion = params[:champion_name]
     @search.save
     @champion = Champion.find_by(:name => params[:champion_name])
+    @name = @champion.name
+    @title = @champion.title
+    @blurb = @champion.blurb
+    @image = @champion.image
     @stats = rank_stats(@search.summoner_name)
     var_name = "@#{params[:champion_name]}"
     @array = self.instance_variable_set(var_name.to_sym, [])
@@ -51,7 +55,7 @@ class SearchesController < ApplicationController
     @search = Search.find(params[:id])
     @summoner_name = @search.summoner_name
     # @stats = rank_stats(@summoner_name)
-    # @league = ranked_league(@summoner_name)
+     @league = ranked_league(@summoner_name)
     # @rank = @league.body["data"]["summonerLeagues"]["array"][0]["tier"]
     # @tier = @league.body["data"]["summonerLeagues"]["array"][0]["requestorsRank"]
     # @aatrox = []

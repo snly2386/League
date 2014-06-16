@@ -1,5 +1,6 @@
 (function () {
-  var commentHtml = "<%= j render('searches/stats', :array => @array) %>";
+  var commentHtml = "<%= j render('searches/stats', :array => @array, :name => @name, :title => @title, :blurb => @blurb, :image => @image) %>";
+  $('.stats').text("")
   $('.stats').append(commentHtml);
   console.log("its working!")
 })();
