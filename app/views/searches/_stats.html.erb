@@ -1,0 +1,10 @@
+
+<% if array.empty? %>
+<h1> NO STATS FOR THIS CHAMPION <h1>
+<% else %>
+<ul> 
+  <% array.each do |elem| %>
+<li> <%=elem["statType"]%>:<%=elem["value"]%> </li>
+<% end %>
+</ul>
+<% end %>

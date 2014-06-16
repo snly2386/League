@@ -4,3 +4,7 @@
   <%=text_field_tag :search, nil, :placeholder => "Enter Summoner Name" %>
 
   <% end %>
+
+  <%=form_tag "/champions", :method => "post" do %>
+  <%=submit_tag("create champs")%>
+  <% end %>
