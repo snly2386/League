@@ -1,3 +1,5 @@
+require 'dotenv'
+Dotenv.load
 require 'unirest'
 class ChampionsController < ApplicationController
 
@@ -5,7 +7,7 @@ class ChampionsController < ApplicationController
   def create
     @response = Unirest::get "https://teemojson.p.mashape.com/datadragon/champion", 
   headers: { 
-    "X-Mashape-Authorization" => "XMxE0oKP0YqjU4fVpZIC4t2kaDUrhoAx"
+    "X-Mashape-Authorization" => ENV["LEAGUE_API"]
   }
 
    @response.body["data"].each do |x,y|
