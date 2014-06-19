@@ -31,6 +31,11 @@
 <%=image_tag(image)%>
 <ul>
 <% @game_stats[i].each do |stats| %>
+<% if stats["statType"] == "WIN" %>
+<div class="winlose" style="background-color: green">WIN</div>
+<% elsif stats["statType"] == "LOSE"%>
+<div class="winlose" style="background-color: red">LOSE</div>
+<% end %>
 <% if stats["statType"] == "CHAMPIONS_KILLED" || stats["statType"] == "NUM_DEATHS" || stats["statType"] == "ASSISTS" %>
 <li><%=stats["statType"]%>: <%=stats["value"]%></li>
 <% end %>
@@ -39,7 +44,7 @@
 </div>
 <% end %>
 
-<h1>LIFETIME RANKED STATS</h1>
+<h1>LIFETIME RANKED STATS(filter by champion)</h1>
 
 <% @champions.each do |champion| %>
 <%=link_to(image_tag(champion.image), searches_update_path(:search_id => @search.id, :champion_name => champion.name), :method => :post, :remote => true) %>
