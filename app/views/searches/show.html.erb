@@ -1,6 +1,7 @@
 <h1> MUDAFUCKIN SEARCH RESULTS </h1>
 
-<h2> Summoner Name: <%=@search.summoner_name%> </h2>
+
+<div class="summoner" style="background-image:url(<%=@champ_images[0]%>)"> Summoner Name: <%=@search.summoner_name%> </div>
 
 <% if @rank == "BRONZE" %>
 <img src = "http://img3.wikia.nocookie.net/__cb20130928162132/leagueoflegends/images/thumb/b/b4/BronzeBadgeSeason2.png/120px-BronzeBadgeSeason2.png"/>
@@ -22,6 +23,23 @@
 <div><%=@rank%> <%=@tier%></div>
 <% end %>
 
+
+<h1> Recent Activity </h1>
+
+<%@champ_images.each_with_index do |image, i| %>
+<div>
+<%=image_tag(image)%>
+<ul>
+<% @game_stats[i].each do |stats| %>
+<% if stats["statType"] == "CHAMPIONS_KILLED" || stats["statType"] == "NUM_DEATHS" || stats["statType"] == "ASSISTS" %>
+<li><%=stats["statType"]%>: <%=stats["value"]%></li>
+<% end %>
+<% end %>
+</ul>
+</div>
+<% end %>
+
+<h1>LIFETIME RANKED STATS</h1>
 
 <% @champions.each do |champion| %>
 <%=link_to(image_tag(champion.image), searches_update_path(:search_id => @search.id, :champion_name => champion.name), :method => :post, :remote => true) %>

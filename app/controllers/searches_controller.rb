@@ -52,6 +52,13 @@ class SearchesController < ApplicationController
   }
   end
 
+  def match_history(summoner_name)
+    @match = Unirest::get "https://teemojson.p.mashape.com/player/na/#{summoner_name}/recent_games", 
+  headers: { 
+    "X-Mashape-Authorization" => ENV["LEAGUE_API"]
+  }
+  end
+
   def show
     @champions = Champion.all
     @search = Search.find(params[:id])
@@ -60,6 +67,17 @@ class SearchesController < ApplicationController
      @league = ranked_league(@summoner_name)
      @rank = @league.body["data"]["summonerLeagues"]["array"][0]["tier"]
      @tier = @league.body["data"]["summonerLeagues"]["array"][0]["requestorsRank"]
+
+     @match_history = match_history(@summoner_name)
+     @champ_images = []
+     @game_stats = []
+     @match_history.body["data"]["gameStatistics"]["array"][0..2].each do |match|
+        champ = Champion.find_by(:key => match["championId"])
+        @champ_images.push(champ.image)
+        @game_stats.push(match["statistics"]["array"])
+     end
+
+
     # @aatrox = []
     # aatrox = @stats.body["data"]["lifetimeStatistics"]["array"].each do |stat| 
     #           @aatrox.push(stat) if stat["championId"] == 266 

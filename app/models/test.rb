@@ -9,3 +9,10 @@ def champion
   }
 end
 
+def match_history
+@match = Unirest::get "https://teemojson.p.mashape.com/player/na/ballsakitysak/recent_games", 
+  headers: { 
+    "X-Mashape-Authorization" => "XMxE0oKP0YqjU4fVpZIC4t2kaDUrhoAx"
+  }
+end
+
