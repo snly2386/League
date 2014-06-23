@@ -14,6 +14,7 @@
       <script type="text/javascript"> <%=render"/searches/jstuff/jquery.scrollTo1.4.2.min.js" %> </script>
       <script type="text/javascript"> <%=render"/searches/jstuff/jquery.localscroll1.2.7.min.js" %> </script>
     <!--******************** NAVBAR ********************-->
+  <div class="bigoverlay">
     <div class="navbar-wrapper">
       <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner">
@@ -26,7 +27,7 @@
               <ul id="menu-main" class="nav">
                 <li><a title="portfolio" href="#portfolio">Match History</a></li>
                 <li><a title="services" href="/">Home</a></li>
-                <li><a title="news" href="#news">Placeholder</a></li>
+                <li><a title="news" href="#news">LifeStats</a></li>
                 <li><a title="team" href="#team">Placeholder</a></li>
                 <li><a title="contact" href="#contact">Placeholder</a></li>
               </ul>
@@ -154,7 +155,7 @@
 
 
 
-
+<div class="bigoverlay">
 <div class="scrollblock">
       <section id="feature">
         <div class="container">
@@ -166,6 +167,7 @@
                  <%=link_to(image_tag(champion.image, class: "champimage wobble-vertical", style: "max-width: 10%;"), searches_update_path(:search_id => @search.id, :champion_name => champion.name), :method => :post, :remote => true) %>
                  <% end %>
               </article>
+              <a href="#news"><div class="results pulse-grow"><strong>See Results</strong></div></a>
             </div>
             <!-- ./span12 -->
           </div>
@@ -202,6 +204,9 @@
       <!-- /.container -->
     </section>
     <hr>
+  </div>
+</div>
+
 
 
 

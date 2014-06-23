@@ -105,6 +105,7 @@
   }
 }
 .wobble-vertical {
+  z-index: 999;
   display: inline-block;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
@@ -120,4 +121,63 @@
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
 }
+
+.bigoverlay {
+ 
+
+}
+
+.popupstuff {
+  z-index: 1000;
+}
+
+.results {
+  position: absolute;
+  height: 900px;
+  width: 50%;
+  font-size: 40px;
+  text-align:center;
+  background-color: black;
+  border: 10px solid white;
+  z-index: 10000000;
+  top: 20%;
+  left: 24%;
+  padding-top: 50px;
+  line-height: 18em;
+}
+
+/* Pulse Grow */
+@-webkit-keyframes pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+@keyframes pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+.pulse-grow {
+  display: inline-block;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.pulse-grow:hover, .pulse-grow:focus, .pulse-grow:active {
+  -webkit-animation-name: pulse-grow;
+  animation-name: pulse-grow;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
 

@@ -504,7 +504,8 @@ blockquote.mega .cite {
 }
 /* News */
 section#news {
-	background: url("../img/grey-cardboard-bg.png") repeat 0 0;
+	background: black;
+	color: white;
 }
 section#news .align {
 	font-size: 6em;
