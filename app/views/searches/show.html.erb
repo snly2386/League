@@ -1,54 +1,192 @@
-<h1> MUDAFUCKIN SEARCH RESULTS </h1>
+
+    
+   
+   
+  
+   
+    <script type="text/javascript" charset="utf-8">
+          $(document).ready(function(){
+            $("a[rel^='prettyPhoto']").prettyPhoto();
+          });
+        </script>
+
+      <script type="text/javascript"> <%=render"/searches/jstuff/jquery.js" %> </script>
+      <script type="text/javascript"> <%=render"/searches/jstuff/jquery.scrollTo1.4.2.min.js" %> </script>
+      <script type="text/javascript"> <%=render"/searches/jstuff/jquery.localscroll1.2.7.min.js" %> </script>
+    <!--******************** NAVBAR ********************-->
+    <div class="navbar-wrapper">
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+            <h1 class="brand"><a href="#top">LeagueStats!</a></h1>
+           
+            <nav class="pull-right nav-collapse collapse">
+              <ul id="menu-main" class="nav">
+                <li><a title="portfolio" href="#portfolio">Match History</a></li>
+                <li><a title="services" href="#services">Placeholder</a></li>
+                <li><a title="news" href="#news">Placeholder</a></li>
+                <li><a title="team" href="#team">Placeholder</a></li>
+                <li><a title="contact" href="#contact">Placeholder</a></li>
+              </ul>
+            </nav>
+          </div>
+          <!-- /.container -->
+        </div>
+        <!-- /.navbar-inner -->
+      </div>
+      <!-- /.navbar -->
+    </div>
+    <!-- /.navbar-wrapper -->
+    <div id="top"></div>
+    <!-- ******************** HeaderWrap ********************-->
+    <div id="headerwrap" style="background-image:url('http://wallmatic.com/download?filename=2013/11/League-Of-Legends-Wallpaper-Desktop.jpg');">
+      <header class="clearfix">
+        <h1><span>Stats For</span> <%=@search.summoner_name%></h1>
+        <div class="container">
+          <div class="row">
+            <div class="span12">
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="span12">
+              <ul class="icon">
+               <!--  <li><a href="#" target="_blank"><i class="icon-pinterest-circled"></i></a></li>
+                <li><a href="#" target="_blank"><i class="icon-facebook-circled"></i></a></li>
+                <li><a href="#" target="_blank"><i class="icon-twitter-circled"></i></a></li>
+                <li><a href="#" target="_blank"><i class="icon-gplus-circled"></i></a></li>
+                <li><a href="#" target="_blank"><i class="icon-skype-circled"></i></a></li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+    <!--******************** Rank ********************-->
+    <div class="scrollblock">
+      <section id="feature">
+        <div class="container">
+          <div class="row">
+            <div class="span12">
+              <article>
+                  <% if @rank == "BRONZE" %>
+                    <img src = "http://img3.wikia.nocookie.net/__cb20130928162132/leagueoflegends/images/thumb/b/b4/BronzeBadgeSeason2.png/120px-BronzeBadgeSeason2.png"/>
+                    <div style="color: #f0bf00; font-size: 2em;"><strong><%= @rank%> <%=@tier%></strong></div>
+                    <% elsif @rank == "SILVER" %>
+                    <img src="http://img1.wikia.nocookie.net/__cb20130928162033/leagueoflegends/images/thumb/9/99/SilverBageSeason2.png/120px-SilverBageSeason2.png" />
+                    <div style="color: silver; font-size:2em;"><strong><%=@rank%> <%=@tier%></strong></div>
+                    <% elsif @rank == "GOLD" %>
+                    <img src="http://img2.wikia.nocookie.net/__cb20130928162204/leagueoflegends/images/thumb/7/77/GoldBadgeSeason2.png/120px-GoldBadgeSeason2.png" />
+                    <div style="color:gold; font-size: 2em;"> <strong><%=@rank%> <%=@tier%></strong></div>
+                    <% elsif @rank == "PlATINUM" %>
+                    <img src="http://img2.wikia.nocookie.net/__cb20130928162240/leagueoflegends/images/thumb/5/5f/PlatinumBadgeSeason2.png/120px-PlatinumBadgeSeason2.png" />
+                    <div style="color:silver; font-size: 2em;"><strong><%=@rank%> <%=@tier%></strong></div>
+                    <% elsif @rank == "DIAMOND" %>
+                    <img src="http://img3.wikia.nocookie.net/__cb20130928162320/leagueoflegends/images/thumb/0/03/DiamondBadge.png/120px-DiamondBadge.png"/>
+                    <div style="color:LightCyan; font-size: 2em;"><strong><%=@rank%> <%=@tier%></strong></div>
+                    <% elsif @rank == "CHALLENGER"%>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC5lqg7zKNwsfyeMk6_RfBLZYaeiqRXEoWpIOOrbYG7jKZF4J4HirhBnNc" />
+                    <div style="color:LimeGreen; font-size: 2em;"><%=@rank%> <%=@tier%></div>
+                  <% end %>
+                  <div style="background-image:url('<%=@champ_images[0]%>'); height:100px;width:13%;background-repeat:no-repeat;margin:auto;"></div>
+              </article>
+            </div>
+            <!-- ./span12 -->
+          </div>
+          <!-- .row -->
+        </div>
+        <!-- ./container -->
+      </section>
+    </div>
+    <hr>
 
 
-<div class="summoner" style="background-image:url(<%=@champ_images[0]%>)"> Summoner Name: <%=@search.summoner_name%> </div>
-
-<% if @rank == "BRONZE" %>
-<img src = "http://img3.wikia.nocookie.net/__cb20130928162132/leagueoflegends/images/thumb/b/b4/BronzeBadgeSeason2.png/120px-BronzeBadgeSeason2.png"/>
-<div><%= @rank%> <%=@tier%></div>
-<% elsif @rank == "SILVER" %>
-<img src="http://img1.wikia.nocookie.net/__cb20130928162033/leagueoflegends/images/thumb/9/99/SilverBageSeason2.png/120px-SilverBageSeason2.png" />
-<div><%=@rank%> <%=@tier%></div>
-<% elsif @rank == "GOLD" %>
-<img src="http://img2.wikia.nocookie.net/__cb20130928162204/leagueoflegends/images/thumb/7/77/GoldBadgeSeason2.png/120px-GoldBadgeSeason2.png" />
-<div><%=@rank%> <%=@tier%></div>
-<% elsif @rank == "PlATINUM" %>
-<img src="http://img2.wikia.nocookie.net/__cb20130928162240/leagueoflegends/images/thumb/5/5f/PlatinumBadgeSeason2.png/120px-PlatinumBadgeSeason2.png" />
-<div><%=@rank%> <%=@tier%></div>
-<% elsif @rank == "DIAMOND" %>
-<img src="http://img3.wikia.nocookie.net/__cb20130928162320/leagueoflegends/images/thumb/0/03/DiamondBadge.png/120px-DiamondBadge.png"/>
-<div><%=@rank%> <%=@tier%></div>
-<% elsif @rank == "CHALLENGER"%>
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC5lqg7zKNwsfyeMk6_RfBLZYaeiqRXEoWpIOOrbYG7jKZF4J4HirhBnNc" />
-<div><%=@rank%> <%=@tier%></div>
-<% end %>
+    <!--******************** Match History Section ********************-->
+    <section id="portfolio" class="single-page scrollblock">
+      <div class="container">
+        <div class="align"></div>
+        <h1 id="folio-headline">Recent Matches</h1>
+        <div class="row">
 
 
-<h1> Recent Activity </h1>
+          <%@champ_images.each_with_index do |image, i| %>
+          <div class="span4">
+            <div class="mask2"> <a href="img/portfolio-01.jpg" rel="prettyPhoto"><%=image_tag(image)%></a> </div>
+            <% @game_stats[i].each do |stats| %>
+            <% if stats["statType"] == "WIN" %>
+            <div class="inside">
+              <hgroup>
+                <h2 style="background-color: green;">WIN</h2>
+              </hgroup>
+            </div>
+              <% elsif stats["statType"] == "LOSE"%>
+              <div class="inside">
+              <hgroup>
+                <h2 style="background-color: red;">LOSS</h2>
+              </hgroup>
+            </div>
+              <% end %>
+              <% if stats["statType"] == "CHAMPIONS_KILLED" || stats["statType"] == "NUM_DEATHS" || stats["statType"] == "ASSISTS" %>
+              <div class="entry-content">
+                <p><%=stats["statType"]%>: <%=stats["value"]%></p>
+            </div>
+              <% end %>
+              <% end %>
+            <!-- /.inside -->
+          </div>
+              <% end %>
+          <!-- /.span4 -->
+          
+        </div>
+        <!-- /.row -->
+        
+        
+          </div>
+          <!-- /.span4 -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container -->
+    </section>
 
-<%@champ_images.each_with_index do |image, i| %>
-<div>
-<%=image_tag(image)%>
-<ul>
-<% @game_stats[i].each do |stats| %>
-<% if stats["statType"] == "WIN" %>
-<div class="winlose" style="background-color: green">WIN</div>
-<% elsif stats["statType"] == "LOSE"%>
-<div class="winlose" style="background-color: red">LOSE</div>
-<% end %>
-<% if stats["statType"] == "CHAMPIONS_KILLED" || stats["statType"] == "NUM_DEATHS" || stats["statType"] == "ASSISTS" %>
-<li><%=stats["statType"]%>: <%=stats["value"]%></li>
-<% end %>
-<% end %>
-</ul>
-</div>
-<% end %>
 
-<h1>LIFETIME RANKED STATS(filter by champion)</h1>
 
-<% @champions.each do |champion| %>
-<%=link_to(image_tag(champion.image), searches_update_path(:search_id => @search.id, :champion_name => champion.name), :method => :post, :remote => true) %>
-<% end %>
+
+
+<div class="scrollblock">
+      <section id="feature">
+        <div class="container">
+          <div class="row">
+            <div class="span12">
+              <article>
+                 <h1 style="color:white;"> Lifetime Ranked Stats </h1>
+                 <% @champions.each do |champion| %>
+                 <%=link_to(image_tag(champion.image, class: "champimage wobble-vertical", style: "max-width: 10%;"), searches_update_path(:search_id => @search.id, :champion_name => champion.name), :method => :post, :remote => true) %>
+                 <% end %>
+              </article>
+            </div>
+            <!-- ./span12 -->
+          </div>
+          <!-- .row -->
+        </div>
+        <!-- ./container -->
+      </section>
+    </div>
+    <hr>
+
+
+
+
+
+
+
+
+
+
+
+
 
   <h1> HERE ARE YOUR STATS </h1> 
 <div class="stats">

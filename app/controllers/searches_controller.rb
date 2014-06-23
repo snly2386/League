@@ -19,7 +19,7 @@ class SearchesController < ApplicationController
   end
 
   def new
-
+    @api = ENV["LEAGUE_API"]
   end
 
   def update_search
@@ -65,8 +65,8 @@ class SearchesController < ApplicationController
     @summoner_name = @search.summoner_name
     # @stats = rank_stats(@summoner_name)
      @league = ranked_league(@summoner_name)
-     @rank = @league.body["data"]["summonerLeagues"]["array"][0]["tier"]
-     @tier = @league.body["data"]["summonerLeagues"]["array"][0]["requestorsRank"]
+      @rank = @league.body["data"]["summonerLeagues"]["array"][0]["tier"]
+      @tier = @league.body["data"]["summonerLeagues"]["array"][0]["requestorsRank"]
 
      @match_history = match_history(@summoner_name)
      @champ_images = []

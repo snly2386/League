@@ -1,10 +1,84 @@
-<h1> HEY MUDAFUCKA, ENTER YO SUMMONA NAME </h1>
 
-<%=form_tag "/searches", :method => "post" do %>
-  <%=text_field_tag :search, nil, :placeholder => "Enter Summoner Name" %>
+    
+   
+   
+  
+   
+    <script type="text/javascript" charset="utf-8">
+          $(document).ready(function(){
+            $("a[rel^='prettyPhoto']").prettyPhoto();
+          });
+        </script>
 
-  <% end %>
+      <script type="text/javascript"> <%=render"/searches/jstuff/jquery.js" %> </script>
+      <script type="text/javascript"> <%=render"/searches/jstuff/jquery.scrollTo1.4.2.min.js" %> </script>
+      <script type="text/javascript"> <%=render"/searches/jstuff/jquery.localscroll1.2.7.min.js" %> </script>
+    <!--******************** NAVBAR ********************-->
+    <div class="navbar-wrapper">
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+            <h1 class="brand"><a href="#top">LeagueStats!</a></h1>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <nav class="pull-right nav-collapse collapse">
+              <ul id="menu-main" class="nav">
+                <li><a title="portfolio" href="#portfolio">Placeholder</a></li>
+                <li><a title="services" href="#services">Placeholder</a></li>
+                <li><a title="news" href="#news">Placeholder</a></li>
+                <li><a title="team" href="#team">Placeholder</a></li>
+                <li><a title="contact" href="#contact">Placeholder</a></li>
+              </ul>
+            </nav>
+          </div>
+          <!-- /.container -->
+        </div>
+        <!-- /.navbar-inner -->
+      </div>
+      <!-- /.navbar -->
+    </div>
+    <!-- /.navbar-wrapper -->
+    <div id="top"></div>
+    <!-- ******************** HeaderWrap ********************-->
+    <div id="headerwrap">
+      <header class="clearfix">
+        <h1><span>Get your Stats</span> for League of Legends</h1>
+        <div class="container">
+          <div class="row">
+            <div class="span12">
+              <h2>Enter Summoner I.D.</h2>
 
-  <%=form_tag "/champions", :method => "post" do %>
-  <%=submit_tag("create champs")%>
-  <% end %>
+                <%=form_tag "/searches", :method => "post" do %>
+                <%=text_field_tag :search, nil, :placeholder => "Enter Summoner Name", class: "cform-text", size: "40" %>
+                <%=submit_tag("Get Stats", class: "cform-submit")%>
+                <% end %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span12">
+              <ul class="icon">
+               <!--  <li><a href="#" target="_blank"><i class="icon-pinterest-circled"></i></a></li>
+                <li><a href="#" target="_blank"><i class="icon-facebook-circled"></i></a></li>
+                <li><a href="#" target="_blank"><i class="icon-twitter-circled"></i></a></li>
+                <li><a href="#" target="_blank"><i class="icon-gplus-circled"></i></a></li>
+                <li><a href="#" target="_blank"><i class="icon-skype-circled"></i></a></li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+    <!--******************** Feature ********************-->
+    
+
+
+
+
+
+
+
+
+
+
+
