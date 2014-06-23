@@ -1,15 +1,17 @@
 
-
-<%=image_tag(@image)%>
-<h1> <%=@name%> </h1>
-<h2><%=@title%> </h2>
-<h3><%=@blurb %> </h3>
-<% if array.empty? %>
-<h1> NO STATS FOR THIS CHAMPION <h1>
-<% else %>
-<ul> 
-  <% array.each do |elem| %>
-<li> <%=elem["statType"]%>:<%=elem["value"]%> </li>
-<% end %>
-</ul>
-<% end %>
+            <%=image_tag(@image, class: "img-news", style: "width:100%;")%>
+            <div class="inside">
+              <p class="post-date"><%=@title%></p>
+              <h2><%=@name%></h2>
+              <div class="entry-content">
+                <p><%=@blurb%></p>
+                 </div>
+              <% if array.empty? %>
+                <h3> NO STATS FOR THIS CHAMPION <h3>
+              <% else %>
+                 <% array.each do |elem| %>
+                 <p> <%=elem["statType"]%>:<%=elem["value"]%> </p>
+                 <% end %>
+            </div>
+                  <% end %>
+         

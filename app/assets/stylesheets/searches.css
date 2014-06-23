@@ -26,6 +26,10 @@
 
 }
 
+.ajax {
+  overflow-y:auto
+}
+
 #feature::-webkit-scrollbar {
     width: 12px;
 }
